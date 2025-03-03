@@ -1,0 +1,22 @@
+digraph {
+	A [label="Handwriting Data
+(Handwritten Images)"]
+	B [label="Personality Data
+(Big Five Trait Scores)"]
+	C [label="Handwriting Feature
+Extraction (ResNet-50)"]
+	D [label="Personality Trait
+Processing (Fully Connected Network)"]
+	E [label="Concatenate Handwriting
+Features + Personality Traits"]
+	F [label="Final Fully Connected
+Layer (Prediction Layer)"]
+	G [label="Output: 5 Big Five
+Personality Traits"]
+	A -> C [label="Extract Features (CNN)"]
+	B -> D [label="Process Traits (FCN)"]
+	C -> E [label="Concatenate Features"]
+	D -> E [label="Concatenate Features"]
+	E -> F [label="Feed into Fully Connected Layer"]
+	F -> G [label="Output Prediction"]
+}
